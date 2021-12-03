@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   
   function handleDragStart(e) {
     this.style.opacity = '0.4';
-    this.style.padding = '20px'
+    this.style.padding = '10px 20px'
     
     dragSrcEl = this;
 
