@@ -1,0 +1,146 @@
+body {
+  margin: auto;
+  font-family: 'Heebo';
+  background-color: rgb(231, 231, 231);
+}
+
+h1 {
+  font-size: 20px;
+  line-height: 24px;
+  color: #fff;
+  padding: 15px;
+  background-color: rgb(77, 172, 219);
+  box-shadow: 5px 0 5px -2px rgba(0,0,0,0.5);
+  justify-content: space-evenly;
+}
+
+h1 a {
+  margin: auto;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+table {
+  width: 100%;
+  table-layout: fixed;
+  border-spacing: 4px 4px;
+  margin: auto;
+  padding: 20px;
+  overflow: hidden;
+  white-space: normal;
+}
+
+th {
+  background-color: rgb(14,24,49);
+  color: #fff;
+  font-weight: lighter;
+  padding: 5px;
+  overflow: hidden;
+  white-space: normal;
+}
+
+td {
+  padding: 12px;
+  background-color: rgb(77, 172, 219);
+  overflow: hidden;
+  white-space: normal;
+}
+
+td:hover {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.topnav {
+  width: 95%;
+  height: 60px;
+  margin: auto;
+  margin-top: 10px;
+  text-align: center;
+  border-radius: 30px;
+  background-color: rgb(14,24,49);
+  box-shadow: 0 2px 3px 0 rgba(0,0,0,0.5);
+}
+
+.topnav a {
+  color: #fff;
+  text-align: center;
+  padding: 15px 20px;
+  text-decoration: none;
+}
+
+.logo {
+  display: inline-block;
+  float: left;
+  height: 40px;
+  width: auto;
+  transform: translateY(-6px);
+}
+
+.master-container {
+  display: flex;
+  height: 100%;
+  margin: auto;
+  width: 95%;
+  border-radius: 20px;
+  float: top;
+}
+
+.container {
+  margin: auto;
+  width: 95%;
+  box-shadow: 5px 5px 5px 0 rgba(0,0,0,0.5);
+  border-radius: 20px;
+  background-color: #fff;
+}
+
+::-webkit-scrollbar {
+  display: none;
+  width: 100%;
+}
+
+.box, .box-fix {
+  color: #fff;
+  width: 50%;
+  text-align: center;
+  margin: auto;
+  margin-top: 2px;
+  border: 3px solid #fff;
+  background-color: rgb(77, 172, 219);
+  border-radius: 24px;
+  padding: 10px;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.card {
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+}
+
+.canvas-card {
+  width: 90%;
+  max-width: 1000px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 5px;
+  margin: auto;
+  padding: 20px;
+}
+
+.circle {
+  width: 70%;
+  border-width: 5px;
+  border-radius: 30px;
+  padding: 10px;
+  color: #000;
+  background-image: linear-gradient(rgb(77, 172, 219), rgb(74, 222, 222));
+  text-align: center;
+  margin: auto;
+}
+
+h4 {
+  color: rgb(0, 0, 0, 0.5);
+}
+/*rgb(30, 67, 150) - dark*/
+/*rgb(77, 172, 219) - medium*/
+/*rgb(74, 222, 222) - light*/

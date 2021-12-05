@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <link href='https://fonts.googleapis.com/css?family=Heebo' rel='stylesheet'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  <script type="text/javascript" src="dragDropTouch.js"></script>
+</head>
+
+<body>
+  <div class="topnav">
+    <a class="active" style="float: left; padding: 10px 20px;font-size: 25px;">Pipeline Optimisation Demo</a>
+    <a class="active" style="float: right; font-size: 20px; color: rgb(77, 172, 219);">
+      <img class="logo" src="RipikLogoTransparent.png">Ripik.ai
+    </a>
+  </div>
+
+<div class="master-container">
+  <div class="card" style="width:40%; height: 635px;">
+    <div class="container">
+      <h1 style="border-top-left-radius: 20px; border-top-right-radius: 20px;">
+        Optimising the Pipeline
+      </h1>
+      <table  style="border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;">
+        <tr>
+          <th rowspan="2">Grade of Steel</th>
+          <th rowspan="2" colspan="2">Quantity to be produced</th>
+          <th colspan="6">Pipeline residence time</th>
+        </tr>
+        <tr>
+          <th>Unit A</th>
+          <th>Unit B</th>
+          <th>Unit C</th>
+          <th>Unit D</th>
+          <th>Unit E</th>
+          <th>Unit F</th>
+        </tr>
+        <tr>
+          <td>0</td>
+          <td colspan="2">2</td>
+          <td>3</td>
+          <td>3</td>
+          <td>2</td>
+          <td>2</td>
+          <td>2</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td colspan="2">3</td>
+          <td>1</td>
+          <td>2</td>
+          <td>2</td>
+          <td>2</td>
+          <td>4</td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td colspan="2">2</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>2</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td colspan="2">1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+          <td>1</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td colspan="2">2</td>
+          <td>1</td>
+          <td>4</td>
+          <td>2</td>
+          <td>1</td>
+          <td>3</td>
+          <td>1</td>
+        </tr>
+      </table>
+    </div>
+    <br>
+    <div class="container">
+      <table>
+        <tr>
+          <th colspan="2">Pipeline</th>
+          <th>Unit A</th>
+          <th>Unit B</th>
+          <th>Unit C</th>
+          <th>Unit D</th>
+          <th>Unit E</th>
+          <th>Unit F</th>
+        </tr>
+        <tr>
+          <th colspan="2">Consumption (per unit of time)</th>
+          <td>12</td>
+          <td>27</td>
+          <td>22</td>
+          <td>32</td>
+          <td>56</td>
+          <td>18</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="card" style="width: 30%; height: 635px;">
+    <div class="container" style="height: 652px">
+      <h1 style="border-top-left-radius: 20px; border-top-right-radius: 20px;">
+        <a>User Sequence</a><a>Optimal Sequence</a>
+      </h1>
+      <div class="card" style="display: flex;">
+        <div style="overflow-x: scroll; align-content: center; width: 50%;">
+          <div draggable="true" id="0" class="box">0</div>
+          <div draggable="true" id="1" class="box">0</div>
+          <div draggable="true" id="2" class="box">1</div>
+          <div draggable="true" id="3" class="box">1</div>
+          <div draggable="true" id="4" class="box">1</div>
+          <div draggable="true" id="5" class="box">2</div>
+          <div draggable="true" id="6" class="box">2</div>
+          <div draggable="true" id="7" class="box">3</div>
+          <div draggable="true" id="8" class="box">4</div>
+          <div draggable="true" id="9" class="box">4</div>
+        </div>
+        <div style="display: inline; overflow-x: scroll; align-content: center; width: 50%;">
+          <div class="box-fix">2</div>
+          <div class="box-fix">2</div>
+          <div class="box-fix">1</div>
+          <div class="box-fix">1</div>
+          <div class="box-fix">1</div>
+          <div class="box-fix">4</div>
+          <div class="box-fix">0</div>
+          <div class="box-fix">0</div>
+          <div class="box-fix">4</div>
+          <div class="box-fix">3</div>
+        </div>
+      </div>
+      <h4>*cannot swap & replace optimal sequence</h4>
+    </div>
+  </div>
+  <div class="card" style="width:30%; height: 635px;">
+    <div class="container">
+      <h1 style="border-top-left-radius: 20px; border-top-right-radius: 20px;">Comparisons</h1>
+      <canvas id="myChart" height="10" width="20"></canvas>
+      <h2 id="userCost"></h2><h2 id="optimalCost">Optimal Cost</h2>
+      <div class ="circle" id="savings" style="display: none;"></div>
+      <h4 id="alert">Drag and drop to modify user input sequence <br> Cost comparisions will be shown here</h4>
+      <br>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="script.js"></script>
+
+</body>
+</html>
